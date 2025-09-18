@@ -3,6 +3,7 @@ import { Figtree } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/react";
 import { constructMetadata } from "@/lib/metadata";
+import type { Viewport } from "next/types";
 
 const FigtreeFont = Figtree({ subsets: ["latin"] });
 
