@@ -1,0 +1,43 @@
+import type { Metadata } from "next";
+
+export const constructMetadata = ({
+  title = "Atlasium — AI Onboarding & Knowledge Platform",
+  description = "Atlasium preserves company expertise with proactive AI walkthroughs of codebases, infra, and workflows. Every new hire ramps faster, knowledge never leaves.",
+  image = "/atlasium-founding50.png",
+  icons = "/favicon.ico",
+  noIndex = false,
+}: {
+  title?: string;
+  description?: string;
+  image?: string;
+  icons?: string;
+  noIndex?: boolean;
+} = {}): Metadata => {
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: image,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+    icons,
+    metadataBase: new URL("https://atlasium.org"),
+    ...(noIndex && {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    }),
+  };
+};
