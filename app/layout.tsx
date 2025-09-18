@@ -8,6 +8,10 @@ const FigtreeFont = Figtree({ subsets: ["latin"] });
 
 export const metadata = constructMetadata();
 
+export const viewport: Viewport = {
+  themeColor: "#0D1B2A",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
