@@ -204,11 +204,13 @@ const Particles: React.FC<ParticlesProps> = ({
 
   const clearContext = () => {
     if (context.current) {
-      context.current.clearRect(
+      // Fill background with #0D1B2A
+      context.current.fillStyle = "#0D1B2A";
+      context.current.fillRect(
         0,
         0,
         canvasSize.current.w,
-        canvasSize.current.h,
+        canvasSize.current.h
       );
     }
   };

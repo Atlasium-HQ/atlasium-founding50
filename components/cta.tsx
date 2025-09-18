@@ -14,30 +14,30 @@ export default function CTA() {
         <div className="flex items-center justify-center">
           <div className="flex w-fit items-center justify-center rounded-full bg-muted/80 text-center">
             <AnimatedShinyText className="px-4 py-1">
-              <span>Coming soon!</span>
+              <span>Founding 50 Waitlist</span>
             </AnimatedShinyText>
           </div>
         </div>
       </motion.div>
 
       <motion.img
-        src="/logo.svg"
-        alt="logo"
-        className="mx-auto h-24 w-24"
+        src="/atlasium-stacked-lockup.png"
+        alt="Atlasium logo"
+        className="mx-auto h-48 w-auto"
         variants={itemVariants}
       />
 
       <motion.div variants={itemVariants}>
         <TextBlur
           className="text-center text-3xl font-medium tracking-tighter sm:text-5xl"
-          text="A Simple Next.js Waitlist Template with Notion as CMS"
+          text="Preserve your expertise. Onboard faster. Grow without losing knowledge."
         />
       </motion.div>
 
       <motion.div variants={itemVariants}>
         <TextBlur
-          className="mx-auto max-w-[27rem] pt-1.5 text-center text-base text-zinc-300 sm:text-lg"
-          text="Join the waitlist to get early access of the product and recieve updates on the progress!"
+          className="mx-auto max-w-[30rem] pt-1.5 text-center text-base text-[#F8F9FA] sm:text-lg"
+          text="Atlasium builds evolving AI walkthroughs of your code, infra and workflows so every new hire ramps faster and knowledge never leaves."
           duration={0.8}
         />
       </motion.div>

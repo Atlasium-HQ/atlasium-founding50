@@ -62,17 +62,17 @@ export default function Form({
         className="mt-4 flex w-full items-center justify-center gap-1 text-muted-foreground">
         <p>For any queries, reach out at </p>
         <Link
-          href="https://x.com/blakssh"
+          href="https://x.com/AtlasiumHQ"
           rel="noopener noreferrer"
           target="_blank">
-          <FaXTwitter className="h-4 w-4 transition-all duration-200 ease-linear hover:text-yellow-200" />
+          <FaXTwitter className="hover:[#D4AF37] h-4 w-4 transition-all duration-200 ease-linear" />
         </Link>
         or
         <Link
-          href="https://github.com/lakshaybhushan"
+          href="https://github.com/AtlasiumHQ"
           rel="noopener noreferrer"
           target="_blank">
-          <FaGithub className="ml-0.5 h-5 w-5 transition-all duration-200 ease-linear hover:text-yellow-200" />
+          <FaGithub className="hover:[#D4AF37] ml-0.5 h-5 w-5 transition-all duration-200 ease-linear" />
         </Link>
       </motion.div>
     </motion.div>
