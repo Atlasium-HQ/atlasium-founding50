@@ -21,7 +21,7 @@ export default function CTA() {
       </motion.div>
 
       <motion.img
-        src="/atlasium-stacked-lockup.png"
+        src="/atlasium-modern-transparent-logo.png"
         alt="Atlasium logo"
         className="mx-auto h-48 w-auto"
         variants={itemVariants}
