@@ -23,11 +23,11 @@ export default function CTA() {
       <motion.img
         src="/atlasium-modern-transparent-logo.png"
         alt="Atlasium logo"
-        className="mx-auto h-48 w-auto"
+        className="mx-auto my-8 h-16 w-auto"
         variants={itemVariants}
       />
 
-            <motion.div variants={itemVariants}>
+      <motion.div variants={itemVariants}>
         <TextBlur
           className="text-center text-3xl font-medium tracking-tighter sm:text-5xl"
           text="Preserve your expertise. Onboard faster. Grow without losing knowledge."
