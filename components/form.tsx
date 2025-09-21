@@ -46,7 +46,14 @@ export default function Form({
       variants={containerVariants}
       initial="hidden"
       animate="visible">
-      {/* Row 1: Name and Email */}
+      <form 
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+        className="flex flex-col gap-2"
+      >
+        {/* Row 1: Name and Email */}
       <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-2">
         <Input
           type="text"
@@ -106,10 +113,12 @@ export default function Form({
           onClick={handleSubmit}
           iconPlacement="right"
           className="mt-2 w-full"
-          disabled={loading}>
+          disabled={loading}
+          type="submit">
           {loading ? "Loading..." : "Apply for Founding 50"}
         </EnhancedButton>
       </motion.div>
+      </form>
       <motion.div variants={itemVariants} className="mt-4 text-center">
         <p className="text-center text-sm text-[#F8F9FA] mb-3">
           Join the Atlasium Founding 50 for early access and the chance to shape how teams onboard.

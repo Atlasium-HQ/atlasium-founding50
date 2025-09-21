@@ -18,50 +18,71 @@ interface EmailProps {
   pain?: string;
 }
 
-export const AtlasiumFoundingEmail = ({ userFirstname, company, role, teamSize, pain }: EmailProps) => (
+export const AtlasiumFoundingEmail = ({
+  userFirstname,
+  company,
+  role,
+  teamSize,
+  pain,
+}: EmailProps) => (
   <Html>
     <Head />
-    <Preview>Thanks for applying to the Atlasium Founding 50, {userFirstname}! 🚀</Preview>
+    <Preview>
+      Thanks for applying to the Atlasium Founding 50, {userFirstname}! 🚀
+    </Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
           src="https://atlasium.org/atlasium-modern-transparent-logo.png"
-          width="180"
+          width="150"
           height="60"
           alt="Atlasium Logo"
           style={logo}
         />
         <Text style={greeting}>Hi {userFirstname},</Text>
         <Text style={paragraph}>
-          Thank you for applying to join the Atlasium Founding 50! We're excited about the opportunity to work with{company ? ` ${company}` : ' your team'} to revolutionize how engineering teams onboard and preserve knowledge.
+          Thank you for applying to join the Atlasium Founding 50! We're excited
+          about the opportunity to work with
+          {company ? ` ${company}` : " your team"} to revolutionize how
+          engineering teams onboard and preserve knowledge.
         </Text>
         {company && (
           <Text style={paragraph}>
-            <strong>Your Application Details:</strong><br />
-            Company: {company}<br />
-            Role: {role}<br />
-            Team Size: {teamSize}<br />
+            <strong>Your Application Details:</strong>
+            <br />
+            Company: {company}
+            <br />
+            Role: {role}
+            <br />
+            Team Size: {teamSize}
+            <br />
             Biggest Onboarding Challenge: {pain}
           </Text>
         )}
         <Text style={paragraph}>
-          We're carefully reviewing all applications and will be in touch within the next few days to discuss next steps. As a Founding 50 member, you'll get early access to Atlasium and the opportunity to directly influence how we build the future of team onboarding.
+          We're carefully reviewing all applications and will be in touch within
+          the next few days to discuss next steps. As a Founding 50 member,
+          you'll get early access to Atlasium and the opportunity to directly
+          influence how we build the future of team onboarding.
         </Text>
         <Text style={paragraph}>
-          Have questions in the meantime? Feel free to reply to this email or reach out to us on{" "}
+          Have questions in the meantime? Feel free to reply to this email or
+          reach out to us on{" "}
           <a href="https://x.com/AtlasiumHQ" style={link}>
             Twitter @AtlasiumHQ
           </a>
         </Text>
         <Text style={signOff}>
-          Best regards,
+          Looking forward to connecting,
           <br />
-          Lakshay
+          Enoch & Caleb
+          <br />
+          Founders, Atlasium
         </Text>
         <Hr style={hr} />
         <Text style={footer}>
-          You received this email because you applied to the Atlasium Founding 50.
-          If you believe this is a mistake, feel free to ignore this email.
+          You received this email because you applied to the Atlasium Founding
+          50. If you believe this is a mistake, feel free to ignore this email.
         </Text>
       </Container>
     </Body>
@@ -73,7 +94,7 @@ AtlasiumFoundingEmail.PreviewProps = {
   company: "TechCorp",
   role: "Engineering Manager",
   teamSize: "12 engineers",
-  pain: "New hires take 3+ months to become productive"
+  pain: "New hires take 3+ months to become productive",
 } as EmailProps;
 
 export default AtlasiumFoundingEmail;
