@@ -58,9 +58,7 @@ export const AtlasiumFoundingEmail = ({
         <Text style={signOff}>
           Looking forward to connecting,
           <br />
-          Enoch & Caleb
-          <br />
-          Founders, Atlasium
+          Atlasium Team
         </Text>
         <Hr style={hr} />
         <Text style={footer}>
