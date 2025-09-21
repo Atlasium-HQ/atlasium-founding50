@@ -38,13 +38,16 @@ export async function POST(request: NextRequest, response: NextResponse) {
 
   const { email, firstname, company, role, teamSize, pain } = await request.json();
 
+  // Extract first name from the full name
+  const firstNameOnly = firstname.trim().split(' ')[0];
+
   const { data, error } = await resend.emails.send({
     from: "Atlasium Team <team@atlasium.org>",
     to: [email],
     subject: "Thanks for applying to the Atlasium Founding 50 🚀",
     reply_to: "team@atlasium.org",
     html: await render(AtlasiumFoundingEmail({ 
-      userFirstname: firstname,
+      userFirstname: firstNameOnly,
       company,
       role,
       teamSize,
