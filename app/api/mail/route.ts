@@ -1,6 +1,6 @@
 import { render } from "@react-email/render";
 
-import WelcomeTemplate from "../../../emails";
+import AtlasiumFoundingEmail from "../../../emails";
 
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
@@ -36,14 +36,20 @@ export async function POST(request: NextRequest, response: NextResponse) {
     );
   }
 
-  const { email, firstname } = await request.json();
+  const { email, firstname, company, role, teamSize, pain } = await request.json();
 
   const { data, error } = await resend.emails.send({
-    from: "Lakshay<hello@waitlist.lakshb.dev>",
+    from: "Atlasium Team <team@atlasium.org>",
     to: [email],
-    subject: "Thankyou for wailisting the Next.js + Notion CMS template!",
-    reply_to: "lakshb.work@gmail.com",
-    html:  await render(WelcomeTemplate({ userFirstname: firstname })),
+    subject: "Welcome to the Atlasium Founding 50! 🚀",
+    reply_to: "team@atlasium.org",
+    html: await render(AtlasiumFoundingEmail({ 
+      userFirstname: firstname,
+      company,
+      role,
+      teamSize,
+      pain
+    })),
   });
 
   // const { data, error } = { data: true, error: null }

@@ -12,40 +12,45 @@ import * as React from "react";
 
 interface EmailProps {
   userFirstname: string;
+  company?: string;
+  role?: string;
+  teamSize?: string;
+  pain?: string;
 }
 
-export const NotionWaitlistEmail = ({ userFirstname }: EmailProps) => (
+export const AtlasiumFoundingEmail = ({ userFirstname, company, role, teamSize, pain }: EmailProps) => (
   <Html>
     <Head />
-    <Preview>Thanks for Joining the Waitlist, {userFirstname}! 🎉</Preview>
+    <Preview>Welcome to the Atlasium Founding 50, {userFirstname}! 🚀</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`https://nextjs-notion-waitlist.vercel.app/waitlist-logo.png`}
-          width="220"
-          height="100"
-          alt="Notion Waitlist Logo"
+          src="https://atlasium.org/atlasium-modern-transparent-logo.png"
+          width="180"
+          height="60"
+          alt="Atlasium Logo"
           style={logo}
         />
         <Text style={greeting}>Hi {userFirstname},</Text>
         <Text style={paragraph}>
-          Thanks for joining the waitlist for our Next.js + Notion CMS waitlist
-          template! I'm Lakshay, the developer behind this project. I'm glad to
-          have you on board.
+          Thank you for applying to join the Atlasium Founding 50! We're excited about the opportunity to work with{company ? ` ${company}` : ' your team'} to revolutionize how engineering teams onboard and preserve knowledge.
+        </Text>
+        {company && (
+          <Text style={paragraph}>
+            <strong>Your Application Details:</strong><br />
+            Company: {company}<br />
+            Role: {role}<br />
+            Team Size: {teamSize}<br />
+            Biggest Onboarding Challenge: {pain}
+          </Text>
+        )}
+        <Text style={paragraph}>
+          We're carefully reviewing all applications and will be in touch within the next few days to discuss next steps. As a Founding 50 member, you'll get early access to Atlasium and the opportunity to directly influence how we build the future of team onboarding.
         </Text>
         <Text style={paragraph}>
-          I'll keep you posted on the progress and notify you as soon as it's
-          ready for you to use. In the meantime, if you have any questions or
-          feedback, don't hesitate to reach out by replying directly to{" "}
-          <a href="mailto:lakshb.work@gmail.com" style={link}>
-            this email {""}
-          </a>
-          — I'm here to listen!
-        </Text>
-        <Text style={paragraph}>
-          You can also follow me on X/Twitter for updates:{" "}
-          <a href="https://x.com/blakssh" style={link}>
-            @blakssh
+          Have questions in the meantime? Feel free to reply to this email or reach out to us on{" "}
+          <a href="https://x.com/AtlasiumHQ" style={link}>
+            Twitter @AtlasiumHQ
           </a>
         </Text>
         <Text style={signOff}>
@@ -63,61 +68,71 @@ export const NotionWaitlistEmail = ({ userFirstname }: EmailProps) => (
   </Html>
 );
 
-NotionWaitlistEmail.PreviewProps = {
-  userFirstname: "Tyler",
+AtlasiumFoundingEmail.PreviewProps = {
+  userFirstname: "Alex",
+  company: "TechCorp",
+  role: "Engineering Manager",
+  teamSize: "12 engineers",
+  pain: "New hires take 3+ months to become productive"
 } as EmailProps;
 
-export default NotionWaitlistEmail;
+export default AtlasiumFoundingEmail;
 
 const main = {
-  background: "linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%)",
-  fontFamily: 'figtree, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  backgroundColor: "#0D1B2A",
+  fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
   padding: "40px 0",
-  color: "#cccccc",
+  minHeight: "100vh",
 };
 
 const container = {
   margin: "0 auto",
-  padding: "24px 32px 48px",
-  backgroundColor: "#1a1a1a",
+  padding: "32px",
+  backgroundColor: "#0D1B2A",
   borderRadius: "12px",
-  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
   maxWidth: "600px",
 };
 
 const logo = {
-  margin: "0 auto",
-  paddingBottom: "20px",
+  margin: "0 auto 32px",
+  display: "block",
 };
 
 const greeting = {
-  fontSize: "18px",
+  fontSize: "20px",
   lineHeight: "28px",
+  color: "#F8F9FA",
+  marginBottom: "24px",
 };
 
 const paragraph = {
   fontSize: "16px",
-  lineHeight: "26px",
+  lineHeight: "24px",
+  color: "#F8F9FA",
   marginBottom: "20px",
 };
 
 const link = {
-  color: "#F7FF9B",
+  color: "#D4AF37",
   textDecoration: "underline",
 };
 
 const signOff = {
   fontSize: "16px",
-  lineHeight: "26px",
-  marginTop: "20px",
+  lineHeight: "24px",
+  color: "#F8F9FA",
+  marginTop: "32px",
+  marginBottom: "32px",
 };
 
 const hr = {
-  borderColor: "#cccccc",
-  margin: "20px 0",
+  borderColor: "#1B263B",
+  margin: "32px 0",
 };
 
 const footer = {
   color: "#8c8c8c",
   fontSize: "12px",
+  lineHeight: "16px",
+  textAlign: "center" as const,
 };

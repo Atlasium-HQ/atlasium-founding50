@@ -95,6 +95,8 @@ export default function Home() {
         if (!notionResponse.ok) {
           if (notionResponse.status === 429) {
             reject("Rate limited");
+          } else if (notionResponse.status === 409) {
+            reject("Email already registered");
           } else {
             reject("Notion insertion failed");
           }
@@ -120,6 +122,8 @@ export default function Home() {
       error: (error) => {
         if (error === "Rate limited") {
           return "You're doing that too much. Please try again later";
+        } else if (error === "Email already registered") {
+          return "This email is already registered for the Founding 50! 🎉";
         } else if (error === "Email sending failed") {
           return "Failed to send email. Please try again 😢.";
         } else if (error === "Notion insertion failed") {
