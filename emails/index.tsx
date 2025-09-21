@@ -34,43 +34,26 @@ export const AtlasiumFoundingEmail = ({
       <Container style={container}>
         <Img
           src="https://atlasium.org/atlasium-modern-transparent-logo.png"
-          width="150"
-          height="60"
           alt="Atlasium Logo"
           style={logo}
         />
         <Text style={greeting}>Hi {userFirstname},</Text>
         <Text style={paragraph}>
-          Thank you for applying to join the Atlasium Founding 50! We're excited
-          about the opportunity to work with
-          {company ? ` ${company}` : " your team"} to revolutionize how
-          engineering teams onboard and preserve knowledge.
-        </Text>
-        {company && (
-          <Text style={paragraph}>
-            <strong>Your Application Details:</strong>
-            <br />
-            Company: {company}
-            <br />
-            Role: {role}
-            <br />
-            Team Size: {teamSize}
-            <br />
-            Biggest Onboarding Challenge: {pain}
-          </Text>
-        )}
-        <Text style={paragraph}>
-          We're carefully reviewing all applications and will be in touch within
-          the next few days to discuss next steps. As a Founding 50 member,
-          you'll get early access to Atlasium and the opportunity to directly
-          influence how we build the future of team onboarding.
+          Thanks for applying to the Atlasium Founding 50 program. We're
+          selecting 50 engineering teams to shape how AI proactively walks
+          through codebases, infra, and workflows so onboarding is faster and
+          knowledge never leaves.
         </Text>
         <Text style={paragraph}>
-          Have questions in the meantime? Feel free to reply to this email or
-          reach out to us on{" "}
-          <a href="https://x.com/AtlasiumHQ" style={link}>
-            Twitter @AtlasiumHQ
+          We'll review your application and get back to you shortly. If you'd
+          like to speed things up, you can book a 15-minute discovery call
+          directly with us{" "}
+          <a
+            href="https://calendly.com/enochkambale/altasium-discovery"
+            style={link}>
+            here
           </a>
+          .
         </Text>
         <Text style={signOff}>
           Looking forward to connecting,
@@ -117,6 +100,8 @@ const container = {
 const logo = {
   margin: "0 auto 32px",
   display: "block",
+  maxWidth: "120px",
+  height: "auto",
 };
 
 const greeting = {

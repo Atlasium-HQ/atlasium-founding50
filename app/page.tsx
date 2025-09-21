@@ -57,7 +57,27 @@ export default function Home() {
 
     const promise = new Promise(async (resolve, reject) => {
       try {
-        // First, attempt to send the email
+        // First, check if email already exists in Notion
+        const notionResponse = await fetch("/api/notion", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, company, role, teamSize, pain }),
+        });
+
+        if (!notionResponse.ok) {
+          if (notionResponse.status === 429) {
+            reject("Rate limited");
+          } else if (notionResponse.status === 409) {
+            reject("Email already registered");
+          } else {
+            reject("Notion insertion failed");
+          }
+          return; // Exit early if Notion fails
+        }
+
+        // If Notion insertion is successful, proceed to send the email
         const mailResponse = await fetch("/api/mail", {
           cache: "no-store",
           method: "POST",
@@ -79,26 +99,6 @@ export default function Home() {
             reject("Rate limited");
           } else {
             reject("Email sending failed");
-          }
-          return; // Exit the promise early if mail sending fails
-        }
-
-        // If email sending is successful, proceed to insert into Notion
-        const notionResponse = await fetch("/api/notion", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, email, company, role, teamSize, pain }),
-        });
-
-        if (!notionResponse.ok) {
-          if (notionResponse.status === 429) {
-            reject("Rate limited");
-          } else if (notionResponse.status === 409) {
-            reject("Email already registered");
-          } else {
-            reject("Notion insertion failed");
           }
         } else {
           resolve({ name });
