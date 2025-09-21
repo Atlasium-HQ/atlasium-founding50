@@ -41,7 +41,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
   const { data, error } = await resend.emails.send({
     from: "Atlasium Team <team@atlasium.org>",
     to: [email],
-    subject: "Welcome to the Atlasium Founding 50! 🚀",
+    subject: "Thanks for applying to the Atlasium Founding 50 🚀",
     reply_to: "team@atlasium.org",
     html: await render(AtlasiumFoundingEmail({ 
       userFirstname: firstname,

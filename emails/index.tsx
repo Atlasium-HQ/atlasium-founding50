@@ -21,7 +21,7 @@ interface EmailProps {
 export const AtlasiumFoundingEmail = ({ userFirstname, company, role, teamSize, pain }: EmailProps) => (
   <Html>
     <Head />
-    <Preview>Welcome to the Atlasium Founding 50, {userFirstname}! 🚀</Preview>
+    <Preview>Thanks for applying to the Atlasium Founding 50, {userFirstname}! 🚀</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
@@ -60,7 +60,7 @@ export const AtlasiumFoundingEmail = ({ userFirstname, company, role, teamSize, 
         </Text>
         <Hr style={hr} />
         <Text style={footer}>
-          You received this email because you signed up for the Notion waitlist.
+          You received this email because you applied to the Atlasium Founding 50.
           If you believe this is a mistake, feel free to ignore this email.
         </Text>
       </Container>
