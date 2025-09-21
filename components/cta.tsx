@@ -14,7 +14,7 @@ export default function CTA() {
         <div className="flex items-center justify-center">
           <div className="flex w-fit items-center justify-center rounded-full bg-muted/80 text-center">
             <AnimatedShinyText className="px-4 py-1">
-              <span>Founding 50 Waitlist</span>
+              <span>Founding 50 Application</span>
             </AnimatedShinyText>
           </div>
         </div>
@@ -27,7 +27,7 @@ export default function CTA() {
         variants={itemVariants}
       />
 
-      <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants}>
         <TextBlur
           className="text-center text-3xl font-medium tracking-tighter sm:text-5xl"
           text="Preserve your expertise. Onboard faster. Grow without losing knowledge."

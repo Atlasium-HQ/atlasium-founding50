@@ -25,6 +25,50 @@ export async function POST(request: Request) {
             },
           ],
         },
+        Company: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: body?.company || "",
+              },
+            },
+          ],
+        },
+        Role: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: body?.role || "",
+              },
+            },
+          ],
+        },
+        "Team Size": {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: body?.teamSize || "",
+              },
+            },
+          ],
+        },
+        "Onboarding Pain": {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: body?.pain || "",
+              },
+            },
+          ],
+        },
       },
     });
 
