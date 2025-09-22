@@ -42,7 +42,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
   const firstNameOnly = firstname.trim().split(' ')[0];
 
   const { data, error } = await resend.emails.send({
-    from: "Atlasium Team <team@atlasium.org>",
+    from: "The Atlasium Team <team@atlasium.org>",
     to: [email],
     subject: "Thanks for applying to the Atlasium Founding 50 🚀",
     reply_to: "team@atlasium.org",
