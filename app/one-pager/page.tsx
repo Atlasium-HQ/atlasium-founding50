@@ -4,7 +4,7 @@ export default function OnePager() {
   return (
     <div className="min-h-screen bg-white font-sans">
       {/* Header */}
-      <header className="relative bg-gradient-to-br from-[#0D1B2A] via-[#1B263B] to-[#0D1B2A] px-8 py-6">
+      <header className="relative bg-gradient-to-br from-[#0D1B2A] via-[#1B263B] to-[#0D1B2A] px-3 py-2 border-b border-[#D4AF37]/20">
         <div className="absolute inset-0 opacity-50">
           <div className="h-full w-full bg-repeat" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -15,18 +15,18 @@ export default function OnePager() {
             <Image
               src="/atlasium-modern-transparent-logo.png"
               alt="Atlasium logo"
-              width={140}
-              height={56}
-              className="h-12 w-auto"
+              width={70}
+              height={28}
+              className="h-5 w-auto"
             />
-            <div className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-2">
-              <span className="text-sm font-semibold tracking-wide text-[#D4AF37]">
-                FOUNDING 50 PROGRAM
+            <div className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-2 py-0.5">
+              <span className="text-xs font-semibold tracking-wide text-[#D4AF37]">
+                FOUNDING 50
               </span>
             </div>
           </div>
-          <div className="mt-4 text-center">
-            <h1 className="bg-gradient-to-r from-[#D4AF37] via-[#F4E784] to-[#D4AF37] bg-clip-text text-lg font-semibold leading-relaxed text-transparent md:text-xl lg:text-2xl">
+          <div className="mt-1 text-center">
+            <h1 className="bg-gradient-to-r from-[#D4AF37] via-[#F4E784] to-[#D4AF37] bg-clip-text text-xs font-semibold leading-tight text-transparent">
               Preserve your expertise. Onboard faster. Grow without losing knowledge.
             </h1>
           </div>
@@ -34,7 +34,7 @@ export default function OnePager() {
       </header>
 
       {/* Main Content */}
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-5xl pt-1">
         
         {/* Problem & Solution - Two Column Layout */}
         <section className="grid grid-cols-2 gap-0">
