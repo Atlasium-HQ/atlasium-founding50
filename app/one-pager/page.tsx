@@ -37,41 +37,41 @@ export default function OnePager() {
       <div className="mx-auto max-w-5xl">
         
         {/* Problem & Solution - Two Column Layout */}
-        <section className="grid gap-0 lg:grid-cols-2">
+        <section className="grid grid-cols-2 gap-0">
           
           {/* Problem */}
-          <div className="bg-gradient-to-br from-red-50 to-orange-50 px-6 py-8 lg:px-8">
-            <div className="mb-4 inline-flex items-center rounded-full bg-red-100 px-3 py-1">
-              <span className="mr-2 text-lg">🚩</span>
-              <h2 className="text-md font-bold text-red-800">THE PROBLEM</h2>
+          <div className="bg-gradient-to-br from-red-50 to-orange-50 px-4 py-6">
+            <div className="mb-3 inline-flex items-center rounded-full bg-red-100 px-2 py-1">
+              <span className="mr-1 text-sm">🚩</span>
+              <h2 className="text-sm font-bold text-red-800">THE PROBLEM</h2>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="group">
-                <div className="flex items-start gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/10">
-                    <span className="text-sm">⚠️</span>
+                <div className="flex items-start gap-2">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/10 mt-0.5">
+                    <span className="text-xs">⚠️</span>
                   </div>
-                  <p className="text-sm leading-snug text-gray-800">
+                  <p className="text-xs leading-tight text-gray-800">
                     <strong>Weeks of confusion:</strong> New hires spend forever piecing together repos, infra, and tribal knowledge.
                   </p>
                 </div>
               </div>
               <div className="group">
-                <div className="flex items-start gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/10">
-                    <span className="text-sm">🕑</span>
+                <div className="flex items-start gap-2">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/10 mt-0.5">
+                    <span className="text-xs">🕑</span>
                   </div>
-                  <p className="text-sm leading-snug text-gray-800">
+                  <p className="text-xs leading-tight text-gray-800">
                     <strong>Constant interruptions:</strong> Senior engineers lose time answering the same questions repeatedly.
                   </p>
                 </div>
               </div>
               <div className="group">
-                <div className="flex items-start gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/10">
-                    <span className="text-sm">🔄</span>
+                <div className="flex items-start gap-2">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/10 mt-0.5">
+                    <span className="text-xs">🔄</span>
                   </div>
-                  <p className="text-sm leading-snug text-gray-800">
+                  <p className="text-xs leading-tight text-gray-800">
                     <strong>Knowledge drain:</strong> Institutional memory walks out the door when people leave.
                   </p>
                 </div>
@@ -80,30 +80,30 @@ export default function OnePager() {
           </div>
 
           {/* Solution */}
-          <div className="bg-gradient-to-br from-[#0D1B2A] via-[#1B263B] to-[#0D1B2A] px-6 py-8 lg:px-8">
-            <div className="mb-4 inline-flex items-center rounded-full bg-[#D4AF37]/20 px-3 py-1">
-              <span className="mr-2 text-lg">⚡</span>
-              <h2 className="text-md font-bold text-[#D4AF37]">THE SOLUTION</h2>
+          <div className="bg-gradient-to-br from-[#0D1B2A] via-[#1B263B] to-[#0D1B2A] px-4 py-6">
+            <div className="mb-3 inline-flex items-center rounded-full bg-[#D4AF37]/20 px-2 py-1">
+              <span className="mr-1 text-sm">⚡</span>
+              <h2 className="text-sm font-bold text-[#D4AF37]">THE SOLUTION</h2>
             </div>
-            <h3 className="mb-3 text-xl font-bold text-white lg:text-2xl">Atlasium</h3>
-            <p className="mb-4 text-sm leading-snug text-gray-300">
+            <h3 className="mb-2 text-lg font-bold text-white">Atlasium</h3>
+            <p className="mb-3 text-xs leading-tight text-gray-300">
               An AI-powered onboarding platform that creates <em className="text-[#D4AF37]">proactive walkthroughs</em> of your codebases, infra, and workflows.
             </p>
-            <div className="grid gap-2 sm:grid-cols-2">
-              <div className="rounded-lg bg-white/5 p-3">
-                <div className="mb-1 text-lg">🎯</div>
+            <div className="grid gap-1.5 grid-cols-2">
+              <div className="rounded-lg bg-white/5 p-2">
+                <div className="mb-1 text-sm">🎯</div>
                 <p className="text-xs text-gray-300">Structured evolving tours, not just Q&A</p>
               </div>
-              <div className="rounded-lg bg-white/5 p-3">
-                <div className="mb-1 text-lg">📊</div>
+              <div className="rounded-lg bg-white/5 p-2">
+                <div className="mb-1 text-sm">📊</div>
                 <p className="text-xs text-gray-300">Visual diagrams & dependency maps</p>
               </div>
-              <div className="rounded-lg bg-white/5 p-3">
-                <div className="mb-1 text-lg">📈</div>
+              <div className="rounded-lg bg-white/5 p-2">
+                <div className="mb-1 text-sm">📈</div>
                 <p className="text-xs text-gray-300">Knowledge compounds over time</p>
               </div>
-              <div className="rounded-lg bg-white/5 p-3">
-                <div className="mb-1 text-lg">🚀</div>
+              <div className="rounded-lg bg-white/5 p-2">
+                <div className="mb-1 text-sm">🚀</div>
                 <p className="text-xs text-gray-300">Every hire ramps faster than the last</p>
               </div>
             </div>
