@@ -111,62 +111,62 @@ export default function OnePager() {
         </section>
 
         {/* Benefits - Three Cards */}
-        <section className="bg-gradient-to-r from-gray-50 via-white to-gray-50 px-6 py-6">
-          <div className="mb-6 text-center">
-            <div className="mb-2 inline-flex items-center rounded-full bg-[#D4AF37]/10 px-4 py-2">
-              <span className="mr-2 text-lg">🌟</span>
-              <h2 className="text-md font-bold text-[#0D1B2A]">BENEFITS</h2>
+        <section className="bg-gradient-to-r from-gray-50 via-white to-gray-50 px-4 py-3">
+          <div className="mb-2 text-center">
+            <div className="mb-1 inline-flex items-center rounded-full bg-[#D4AF37]/10 px-2 py-0.5">
+              <span className="mr-1 text-xs">🌟</span>
+              <h2 className="text-xs font-bold text-[#0D1B2A]">BENEFITS</h2>
             </div>
           </div>
           <div className="grid gap-2 grid-cols-3">
-            <div className="group relative rounded-lg bg-white p-3 shadow-md">
-              <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
-                <span className="text-sm">⏱️</span>
+            <div className="group relative rounded-lg bg-white p-2 shadow-md">
+              <div className="mb-1 flex h-6 w-6 items-center justify-center rounded-full bg-green-100">
+                <span className="text-xs">⏱️</span>
               </div>
-              <h3 className="mb-1 text-sm font-bold text-gray-900">Faster ramp-up</h3>
+              <h3 className="mb-1 text-xs font-bold text-gray-900">Faster ramp-up</h3>
               <p className="text-xs text-gray-600 leading-tight">Cut onboarding from months to weeks with guided, contextual learning paths.</p>
             </div>
-            <div className="group relative rounded-lg bg-white p-3 shadow-md">
-              <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
-                <span className="text-sm">🧑‍💻</span>
+            <div className="group relative rounded-lg bg-white p-2 shadow-md">
+              <div className="mb-1 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">
+                <span className="text-xs">🧑‍💻</span>
               </div>
-              <h3 className="mb-1 text-sm font-bold text-gray-900">Reduced interruptions</h3>
+              <h3 className="mb-1 text-xs font-bold text-gray-900">Reduced interruptions</h3>
               <p className="text-xs text-gray-600 leading-tight">Senior engineers focus on building, not answering the same questions repeatedly.</p>
             </div>
-            <div className="group relative rounded-lg bg-white p-3 shadow-md">
-              <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-purple-100">
-                <span className="text-sm">🛡️</span>
+            <div className="group relative rounded-lg bg-white p-2 shadow-md">
+              <div className="mb-1 flex h-6 w-6 items-center justify-center rounded-full bg-purple-100">
+                <span className="text-xs">🛡️</span>
               </div>
-              <h3 className="mb-1 text-sm font-bold text-gray-900">Knowledge retention</h3>
+              <h3 className="mb-1 text-xs font-bold text-gray-900">Knowledge retention</h3>
               <p className="text-xs text-gray-600 leading-tight">Build institutional memory that grows stronger and never walks out the door.</p>
             </div>
           </div>
         </section>
 
         {/* Founding 50 Program */}
-        <section className="bg-gradient-to-br from-[#D4AF37]/5 via-[#D4AF37]/10 to-[#D4AF37]/5 px-6 py-6">
+        <section className="bg-gradient-to-br from-[#D4AF37]/5 via-[#D4AF37]/10 to-[#D4AF37]/5 px-4 py-3">
           <div className="text-center">
-            <div className="mb-3 inline-flex items-center rounded-full bg-[#D4AF37] px-4 py-2">
-              <span className="mr-2 text-lg">🎯</span>
-              <h2 className="text-md font-bold text-[#0D1B2A]">THE FOUNDING 50 PROGRAM</h2>
+            <div className="mb-2 inline-flex items-center rounded-full bg-[#D4AF37] px-2 py-0.5">
+              <span className="mr-1 text-xs">🎯</span>
+              <h2 className="text-xs font-bold text-[#0D1B2A]">FOUNDING 50 PROGRAM</h2>
             </div>
-            <h3 className="mb-4 text-lg font-bold text-gray-900 lg:text-xl">
+            <h3 className="mb-2 text-sm font-bold text-gray-900">
               Join 50 forward-thinking engineering teams
             </h3>
             <div className="mx-auto grid max-w-4xl gap-2 grid-cols-3">
               <div className="rounded-lg bg-white p-2 shadow-sm">
-                <div className="mb-1 text-md">🚀</div>
-                <h4 className="mb-1 text-xs font-semibold text-gray-900">Early Access</h4>
+                <div className="mb-1 text-sm">🚀</div>
+                <h4 className="mb-0.5 text-xs font-semibold text-gray-900">Early Access</h4>
                 <p className="text-xs text-gray-600">Get first access to Atlasium&apos;s MVP and cutting-edge features.</p>
               </div>
               <div className="rounded-lg bg-white p-2 shadow-sm">
-                <div className="mb-1 text-md">🗣️</div>
-                <h4 className="mb-1 text-xs font-semibold text-gray-900">Shape the Product</h4>
+                <div className="mb-1 text-sm">🗣️</div>
+                <h4 className="mb-0.5 text-xs font-semibold text-gray-900">Shape the Product</h4>
                 <p className="text-xs text-gray-600">Influence our roadmap with your real onboarding pain points.</p>
               </div>
               <div className="rounded-lg bg-white p-2 shadow-sm">
-                <div className="mb-1 text-md">💎</div>
-                <h4 className="mb-1 text-xs font-semibold text-gray-900">Founding Benefits</h4>
+                <div className="mb-1 text-sm">💎</div>
+                <h4 className="mb-0.5 text-xs font-semibold text-gray-900">Founding Benefits</h4>
                 <p className="text-xs text-gray-600">Special pricing, priority support, and exclusive access.</p>
               </div>
             </div>
@@ -175,31 +175,18 @@ export default function OnePager() {
       </div>
 
       {/* CTA Footer */}
-      <footer className="relative bg-gradient-to-r from-[#0D1B2A] via-[#1B263B] to-[#0D1B2A] px-4 py-3 text-center">
-        <div className="absolute inset-0 opacity-50">
-          <div className="h-full w-full bg-repeat" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
-        </div>
+      <footer className="relative bg-gradient-to-r from-[#0D1B2A] via-[#1B263B] to-[#0D1B2A] px-4 py-1.5 text-center">
         <div className="relative mx-auto max-w-4xl">
-          <div className="mb-2">
-            <span className="text-lg">🚀</span>
-          </div>
-          <h2 className="mb-2 bg-gradient-to-r from-[#D4AF37] via-[#F4E784] to-[#D4AF37] bg-clip-text text-lg font-bold leading-tight text-transparent">
+          <h2 className="mb-1.5 bg-gradient-to-r from-[#D4AF37] via-[#F4E784] to-[#D4AF37] bg-clip-text text-sm font-bold leading-tight text-transparent">
             Ready to transform your onboarding?
           </h2>
-          <p className="mb-2 text-xs text-gray-300">
-            Apply now to join the Atlasium Founding 50 and shape the future of AI-native onboarding.
-          </p>
-          <div className="space-y-1">
-            <div className="inline-flex items-center rounded-full bg-[#D4AF37] px-4 py-2 shadow-2xl">
-              <span className="mr-2 text-sm">👉</span>
-              <span className="text-md font-bold text-[#0D1B2A]">atlasium.org</span>
-            </div>
-            <div className="text-xs text-gray-400">
-              <span>📩 Questions? Reach us at </span>
-              <span className="font-semibold text-[#D4AF37]">team@atlasium.org</span>
-            </div>
+          <div className="inline-flex items-center rounded-full bg-[#D4AF37] px-4 py-1.5 shadow-xl">
+            <span className="mr-1.5 text-xs">👉</span>
+            <span className="text-sm font-bold text-[#0D1B2A]">atlasium.org</span>
+          </div>
+          <div className="mt-1 text-xs text-gray-400">
+            <span>📩 </span>
+            <span className="font-semibold text-[#D4AF37]">team@atlasium.org</span>
           </div>
         </div>
       </footer>
