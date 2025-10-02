@@ -175,28 +175,28 @@ export default function OnePager() {
       </div>
 
       {/* CTA Footer */}
-      <footer className="relative bg-gradient-to-r from-[#0D1B2A] via-[#1B263B] to-[#0D1B2A] px-6 py-8 text-center">
+      <footer className="relative bg-gradient-to-r from-[#0D1B2A] via-[#1B263B] to-[#0D1B2A] px-4 py-3 text-center">
         <div className="absolute inset-0 opacity-50">
           <div className="h-full w-full bg-repeat" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
           }}></div>
         </div>
         <div className="relative mx-auto max-w-4xl">
-          <div className="mb-4">
-            <span className="text-2xl">🚀</span>
+          <div className="mb-2">
+            <span className="text-lg">🚀</span>
           </div>
-          <h2 className="mb-3 bg-gradient-to-r from-[#D4AF37] via-[#F4E784] to-[#D4AF37] bg-clip-text text-xl font-bold leading-tight text-transparent lg:text-2xl">
+          <h2 className="mb-2 bg-gradient-to-r from-[#D4AF37] via-[#F4E784] to-[#D4AF37] bg-clip-text text-lg font-bold leading-tight text-transparent">
             Ready to transform your onboarding?
           </h2>
-          <p className="mb-4 text-sm text-gray-300">
+          <p className="mb-2 text-xs text-gray-300">
             Apply now to join the Atlasium Founding 50 and shape the future of AI-native onboarding.
           </p>
-          <div className="space-y-2">
-            <div className="inline-flex items-center rounded-full bg-[#D4AF37] px-6 py-3 shadow-2xl">
-              <span className="mr-2 text-lg">👉</span>
-              <span className="text-lg font-bold text-[#0D1B2A]">atlasium.org</span>
+          <div className="space-y-1">
+            <div className="inline-flex items-center rounded-full bg-[#D4AF37] px-4 py-2 shadow-2xl">
+              <span className="mr-2 text-sm">👉</span>
+              <span className="text-md font-bold text-[#0D1B2A]">atlasium.org</span>
             </div>
-            <div className="text-sm text-gray-400">
+            <div className="text-xs text-gray-400">
               <span>📩 Questions? Reach us at </span>
               <span className="font-semibold text-[#D4AF37]">team@atlasium.org</span>
             </div>
