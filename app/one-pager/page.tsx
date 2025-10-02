@@ -118,27 +118,27 @@ export default function OnePager() {
               <h2 className="text-md font-bold text-[#0D1B2A]">BENEFITS</h2>
             </div>
           </div>
-          <div className="grid gap-4 lg:grid-cols-3">
-            <div className="group relative rounded-xl bg-white p-4 shadow-md transition-all hover:shadow-lg">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
-                <span className="text-lg">⏱️</span>
+          <div className="grid gap-2 grid-cols-3">
+            <div className="group relative rounded-lg bg-white p-3 shadow-md">
+              <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
+                <span className="text-sm">⏱️</span>
               </div>
-              <h3 className="mb-2 text-md font-bold text-gray-900">Faster ramp-up</h3>
-              <p className="text-xs text-gray-600 leading-snug">Cut onboarding from months to weeks with guided, contextual learning paths.</p>
+              <h3 className="mb-1 text-sm font-bold text-gray-900">Faster ramp-up</h3>
+              <p className="text-xs text-gray-600 leading-tight">Cut onboarding from months to weeks with guided, contextual learning paths.</p>
             </div>
-            <div className="group relative rounded-xl bg-white p-4 shadow-md transition-all hover:shadow-lg">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
-                <span className="text-lg">🧑‍💻</span>
+            <div className="group relative rounded-lg bg-white p-3 shadow-md">
+              <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
+                <span className="text-sm">🧑‍💻</span>
               </div>
-              <h3 className="mb-2 text-md font-bold text-gray-900">Reduced interruptions</h3>
-              <p className="text-xs text-gray-600 leading-snug">Senior engineers focus on building, not answering the same questions repeatedly.</p>
+              <h3 className="mb-1 text-sm font-bold text-gray-900">Reduced interruptions</h3>
+              <p className="text-xs text-gray-600 leading-tight">Senior engineers focus on building, not answering the same questions repeatedly.</p>
             </div>
-            <div className="group relative rounded-xl bg-white p-4 shadow-md transition-all hover:shadow-lg">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-purple-100">
-                <span className="text-lg">🛡️</span>
+            <div className="group relative rounded-lg bg-white p-3 shadow-md">
+              <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-purple-100">
+                <span className="text-sm">🛡️</span>
               </div>
-              <h3 className="mb-2 text-md font-bold text-gray-900">Knowledge retention</h3>
-              <p className="text-xs text-gray-600 leading-snug">Build institutional memory that grows stronger and never walks out the door.</p>
+              <h3 className="mb-1 text-sm font-bold text-gray-900">Knowledge retention</h3>
+              <p className="text-xs text-gray-600 leading-tight">Build institutional memory that grows stronger and never walks out the door.</p>
             </div>
           </div>
         </section>
@@ -153,20 +153,20 @@ export default function OnePager() {
             <h3 className="mb-4 text-lg font-bold text-gray-900 lg:text-xl">
               Join 50 forward-thinking engineering teams
             </h3>
-            <div className="mx-auto grid max-w-4xl gap-3 lg:grid-cols-3">
-              <div className="rounded-lg bg-white p-3 shadow-sm">
-                <div className="mb-2 text-lg">🚀</div>
-                <h4 className="mb-1 text-sm font-semibold text-gray-900">Early Access</h4>
+            <div className="mx-auto grid max-w-4xl gap-2 grid-cols-3">
+              <div className="rounded-lg bg-white p-2 shadow-sm">
+                <div className="mb-1 text-md">🚀</div>
+                <h4 className="mb-1 text-xs font-semibold text-gray-900">Early Access</h4>
                 <p className="text-xs text-gray-600">Get first access to Atlasium&apos;s MVP and cutting-edge features.</p>
               </div>
-              <div className="rounded-lg bg-white p-3 shadow-sm">
-                <div className="mb-2 text-lg">🗣️</div>
-                <h4 className="mb-1 text-sm font-semibold text-gray-900">Shape the Product</h4>
+              <div className="rounded-lg bg-white p-2 shadow-sm">
+                <div className="mb-1 text-md">🗣️</div>
+                <h4 className="mb-1 text-xs font-semibold text-gray-900">Shape the Product</h4>
                 <p className="text-xs text-gray-600">Influence our roadmap with your real onboarding pain points.</p>
               </div>
-              <div className="rounded-lg bg-white p-3 shadow-sm">
-                <div className="mb-2 text-lg">💎</div>
-                <h4 className="mb-1 text-sm font-semibold text-gray-900">Founding Benefits</h4>
+              <div className="rounded-lg bg-white p-2 shadow-sm">
+                <div className="mb-1 text-md">💎</div>
+                <h4 className="mb-1 text-xs font-semibold text-gray-900">Founding Benefits</h4>
                 <p className="text-xs text-gray-600">Special pricing, priority support, and exclusive access.</p>
               </div>
             </div>
