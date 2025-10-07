@@ -27,7 +27,10 @@ const slideVariants = {
     }),
 };
 
-export default function DeckPage() {
+
+import { Suspense } from 'react';
+
+function Deck() {
     const searchParams = useSearchParams();
     const secret = searchParams.get('secret');
     const [isAuthorized, setIsAuthorized] = useState(false);
@@ -112,4 +115,12 @@ export default function DeckPage() {
             </button>
         </div>
     );
+}
+
+export default function DeckPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <Deck />
+        </Suspense>
+    )
 }
