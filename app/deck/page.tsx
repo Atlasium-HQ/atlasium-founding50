@@ -77,7 +77,17 @@ function Deck() {
     const slideIndex = ((page % slides.length) + slides.length) % slides.length;
 
     return (
-        <div className="relative flex h-screen w-full items-center justify-center overflow-hidden" style={{ backgroundColor: '#0D1B2A' }}>
+        <>
+            {/* Message for small screens */}
+            <div className="flex lg:hidden h-screen w-full items-center justify-center text-foreground px-6" style={{ backgroundColor: '#0D1B2A' }}>
+                <div className="text-center max-w-md">
+                    <h1 className="text-2xl font-bold mb-4">Desktop View Only</h1>
+                    <p className="text-muted-foreground">This presentation is designed for larger screens. Please view it on a desktop or laptop computer for the best experience.</p>
+                </div>
+            </div>
+            
+            {/* Deck content - only visible on large screens */}
+            <div className="hidden lg:flex relative h-screen w-full items-center justify-center overflow-hidden" style={{ backgroundColor: '#0D1B2A' }}>
             <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                     key={page}
@@ -102,18 +112,21 @@ function Deck() {
                  <span className="text-sm text-muted-foreground">{slideIndex + 1} / {slides.length}</span>
             </div>
             <button
+                type="button"
                 onClick={() => paginate(-1)}
                 className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-secondary p-2 text-foreground hover:bg-accent"
             >
                 <ChevronLeft className="h-6 w-6" />
             </button>
             <button
+                type="button"
                 onClick={() => paginate(1)}
                 className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-secondary p-2 text-foreground hover:bg-accent"
             >
                 <ChevronRight className="h-6 w-6" />
             </button>
         </div>
+        </>
     );
 }
 
