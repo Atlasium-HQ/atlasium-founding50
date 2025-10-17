@@ -20,7 +20,7 @@ export default function OnePager() {
           </div>
           <div className="text-center">
             <h1 className="text-lg font-semibold text-[#D4AF37]">
-              Preserve your expertise. Onboard faster. Grow without losing knowledge.
+              Living memory for your code, infra, and workflows.
             </h1>
           </div>
         </div>
@@ -39,16 +39,16 @@ export default function OnePager() {
             </div>
             <div className="space-y-4">
               <div>
-                <h3 className="text-white font-bold mb-1">⚠️ Weeks of confusion</h3>
-                <p className="text-gray-200 text-sm">New hires spend forever piecing together repos, infra, and tribal knowledge.</p>
+                <h3 className="text-white font-bold mb-1">⏳ Wasted Weeks</h3>
+                <p className="text-gray-200 text-sm">Engineering teams waste weeks rediscovering tribal knowledge whenever someone joins or leaves.</p>
               </div>
               <div>
-                <h3 className="text-white font-bold mb-1">🕑 Constant interruptions</h3>
-                <p className="text-gray-200 text-sm">Senior engineers lose time answering the same questions repeatedly.</p>
+                <h3 className="text-white font-bold mb-1">💬 Constant Interruptions</h3>
+                <p className="text-gray-200 text-sm">Context is lost, and senior engineers are constantly interrupted, slowing down the entire team.</p>
               </div>
               <div>
-                <h3 className="text-white font-bold mb-1">🔄 Knowledge drain</h3>
-                <p className="text-gray-200 text-sm">Institutional memory walks out the door when people leave.</p>
+                <h3 className="text-white font-bold mb-1">🚶 Knowledge Drain</h3>
+                <p className="text-gray-200 text-sm">Your most valuable knowledge walks out the door when people leave, and documentation quickly becomes outdated.</p>
               </div>
             </div>
           </div>
@@ -60,20 +60,20 @@ export default function OnePager() {
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Atlasium</h3>
             <p className="text-gray-300 mb-4 text-sm">
-              An AI-powered onboarding platform that creates proactive walkthroughs of your codebases, infra, and workflows.
+              Atlasium turns a company’s code, infrastructure, and workflows into living walkthroughs that evolve with every update. We help engineers onboard faster, keep context alive, and make documentation intelligent and always up to date.
             </p>
             <div className="grid grid-cols-2 gap-2">
               <div className="bg-[#D4AF37] bg-opacity-20 p-2 rounded text-center">
-                <p className="text-xs text-gray-200">🎯 Structured evolving tours</p>
+                <p className="text-xs text-gray-200">🎯 Living walkthroughs</p>
               </div>
               <div className="bg-[#D4AF37] bg-opacity-20 p-2 rounded text-center">
-                <p className="text-xs text-gray-200">📊 Visual diagrams & maps</p>
+                <p className="text-xs text-gray-200">🗺️ Visual diagrams & maps</p>
               </div>
               <div className="bg-[#D4AF37] bg-opacity-20 p-2 rounded text-center">
-                <p className="text-xs text-gray-200">📈 Knowledge compounds</p>
+                <p className="text-xs text-gray-200">🧠 Knowledge compounds</p>
               </div>
               <div className="bg-[#D4AF37] bg-opacity-20 p-2 rounded text-center">
-                <p className="text-xs text-gray-200">🚀 Faster ramp each time</p>
+                <p className="text-xs text-gray-200">🚀 Always up to date</p>
               </div>
             </div>
           </div>
@@ -86,21 +86,16 @@ export default function OnePager() {
               <h2 className="text-sm font-bold">🌟 BENEFITS</h2>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             <div className="bg-white bg-opacity-10 p-4 rounded-lg text-center border border-white border-opacity-20">
-              <div className="text-2xl mb-2">⏱️</div>
-              <h3 className="font-bold text-sm mb-1">Faster ramp-up</h3>
-              <p className="text-xs text-gray-300">Cut onboarding from months to weeks with guided learning paths.</p>
+              <div className="text-2xl mb-2">🚀</div>
+              <h3 className="font-bold text-sm mb-1">Onboard Faster</h3>
+              <p className="text-xs text-gray-300">Turn your code, infra, and workflows into living walkthroughs that evolve with every update.</p>
             </div>
             <div className="bg-white bg-opacity-10 p-4 rounded-lg text-center border border-white border-opacity-20">
-              <div className="text-2xl mb-2">🧑‍💻</div>
-              <h3 className="font-bold text-sm mb-1">Reduced interruptions</h3>
-              <p className="text-xs text-gray-300">Senior engineers focus on building, not answering questions.</p>
-            </div>
-            <div className="bg-white bg-opacity-10 p-4 rounded-lg text-center border border-white border-opacity-20">
-              <div className="text-2xl mb-2">🛡️</div>
-              <h3 className="font-bold text-sm mb-1">Knowledge retention</h3>
-              <p className="text-xs text-gray-300">Build institutional memory that never walks out the door.</p>
+              <div className="text-2xl mb-2">💡</div>
+              <h3 className="font-bold text-sm mb-1">Intelligent Docs</h3>
+              <p className="text-xs text-gray-300">Keep context alive, and make documentation intelligent and always up to date.</p>
             </div>
           </div>
         </div>

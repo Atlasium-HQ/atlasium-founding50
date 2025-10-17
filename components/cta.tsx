@@ -30,14 +30,14 @@ export default function CTA() {
       <motion.div variants={itemVariants}>
         <TextBlur
           className="text-center text-3xl font-medium tracking-tighter sm:text-5xl"
-          text="Preserve your expertise. Onboard faster. Grow without losing knowledge."
+          text="Living memory for your code, infra, and workflows."
         />
       </motion.div>
 
       <motion.div variants={itemVariants}>
         <TextBlur
           className="mx-auto max-w-[30rem] pt-1.5 text-center text-base text-[#F8F9FA] sm:text-lg"
-          text="Atlasium builds evolving AI walkthroughs of your code, infra and workflows so every new hire ramps faster and knowledge never leaves."
+          text="Atlasium turns a company’s code, infrastructure, and workflows into living walkthroughs that evolve with every update. We help engineers onboard faster, keep context alive, and make documentation intelligent and always up to date."
           duration={0.8}
         />
       </motion.div>

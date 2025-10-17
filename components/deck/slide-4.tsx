@@ -21,7 +21,7 @@ export const Slide4 = () => {
                 </div>
             </div>
             <div className="absolute bottom-10 text-center text-sm text-muted-foreground">
-                <p>Atlasium - Preserve your expertise. Onboard faster. Grow without losing knowledge.</p>
+                <p>Atlasium - Living memory for your code, infra, and workflows.</p>
                 <p>atlasium.org</p>
             </div>
         </div>
