@@ -7,10 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "email": "email dev",
-    "generate-pdf": "node scripts/generate-pdf.js",
-    "generate-pdf-multi": "node scripts/generate-pdf.js multiple",
-    "pdf": "npm run generate-pdf"
+    "generate-og-image": "node scripts/generate-og-image.js"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",

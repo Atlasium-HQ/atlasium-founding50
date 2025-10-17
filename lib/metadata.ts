@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const constructMetadata = ({
   title = "Atlasium | AI Onboarding Platform to Preserve Expertise & Ramp Engineers Faster",
   description = "Atlasium transforms onboarding with evolving AI walkthroughs of your codebase, infrastructure, and workflows. Every new hire ramps faster, expertise stays preserved, and your team keeps moving forward without losing knowledge.",
-  image = "/atlasium-opengraph-image.png",
+  image = "/og-image.png",
   icons = "/favicon.ico",
   noIndex = false,
 }: {

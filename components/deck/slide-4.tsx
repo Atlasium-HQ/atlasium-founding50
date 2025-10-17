@@ -13,7 +13,7 @@ export const Slide4 = () => {
                 <div className="absolute top-[50%] left-[10%] h-3 w-3 rounded-full bg-blue-500/20"></div>
             </div>
             <div className="z-10">
-                <Image src="/atlasium-modern-transparent-logo.png" alt="Atlasium Logo" width={200} height={100} className="mb-8 brightness-200 saturate-200"/>
+                <Image src="/atlasium-modern-transparent-logo.png" alt="Atlasium Logo" width={200} height={100} className="mb-8"/>
                 <h1 className="mb-8 text-5xl font-bold">Every company deserves a permanent memory.</h1>
                 <div className="text-xl text-muted-foreground">
                     <p>Atlasium becomes the long-term memory of every organization - an intelligent teammate who never leaves.</p>
