@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Particles from "@/components/ui/particles";
 import { ArrowRight, ArrowLeft } from "lucide-react";
+
+// Password protection - change this to your desired password
+const DECK_PASSWORD = "founding50";
 
 const slides = [
   {
@@ -644,6 +647,17 @@ const slides = [
 
 export default function InvestorDeck() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
+  useEffect(() => {
+    // Check for password in URL query parameter
+    const params = new URLSearchParams(window.location.search);
+    const password = params.get("key");
+    
+    if (password === DECK_PASSWORD) {
+      setIsAuthorized(true);
+    }
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -656,6 +670,36 @@ export default function InvestorDeck() {
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
+
+  // Show access denied page if not authorized
+  if (!isAuthorized) {
+    return (
+      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#0D1B2A] via-[#1B263B] to-[#0D1B2A]">
+        <Particles className="absolute inset-0" ease={80} color="#D4AF37" refresh />
+        <div className="relative z-10 max-w-md space-y-6 px-6 text-center">
+          <div className="mb-8">
+            <h1 className="mb-4 text-4xl font-bold text-[#D4AF37]">Atlasium</h1>
+            <p className="text-lg text-[#F8F9FA]/80">Investor Deck</p>
+          </div>
+          <div className="rounded-lg border border-[#D4AF37]/30 bg-[#0D1B2A]/80 p-8">
+            <div className="mb-4 text-6xl">🔒</div>
+            <h2 className="mb-3 text-2xl font-semibold text-[#F8F9FA]">Access Required</h2>
+            <p className="mb-6 text-sm text-[#F8F9FA]/70">
+              This deck is confidential. Please use the access link provided by the Atlasium team.
+            </p>
+            <div className="rounded-md border border-[#D4AF37]/20 bg-[#1B263B] p-4">
+              <p className="text-xs text-[#F8F9FA]/60">
+                Need access? Contact{" "}
+                <a href="mailto:enochkambale@atlasium.com" className="text-[#D4AF37] hover:underline">
+                  enochkambale@atlasium.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <main className="relative flex min-h-screen items-center justify-center bg-[#0D1B2A] p-4">
