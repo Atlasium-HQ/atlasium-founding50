@@ -33,7 +33,7 @@ export default function About() {
         <div className="rounded-lg border border-[#D4AF37]/20 bg-[#1B263B]/50 p-6">
           <h3 className="mb-3 text-2xl font-semibold text-[#D4AF37]">The Problem We Solve</h3>
           <p className="mb-4 text-lg leading-relaxed">
-            Engineering teams waste weeks or months rediscovering "tribal knowledge" whenever someone joins or leaves.
+            Engineering teams waste weeks or months rediscovering &ldquo;tribal knowledge&rdquo; whenever someone joins or leaves.
             In complex, domain-driven codebases (fintech, healthtech, legaltech, insurance), this knowledge drain costs
             companies <strong>$150K-$450K per senior engineer departure</strong> and extends new hire onboarding to 3-6 months.
           </p>
