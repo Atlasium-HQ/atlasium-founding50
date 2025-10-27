@@ -14,7 +14,7 @@ export default function CTA() {
         <div className="flex items-center justify-center">
           <div className="flex w-fit items-center justify-center rounded-full bg-muted/80 text-center">
             <AnimatedShinyText className="px-4 py-1">
-              <span>Founding 50 Application</span>
+              <span>Coming Soon</span>
             </AnimatedShinyText>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function CTA() {
       <motion.div variants={itemVariants}>
         <TextBlur
           className="mx-auto max-w-[30rem] pt-1.5 text-center text-base text-[#F8F9FA] sm:text-lg"
-          text="Atlasium turns a company’s code, infrastructure, and workflows into living walkthroughs that evolve with every update. We help engineers onboard faster, keep context alive, and make documentation intelligent and always up to date."
+          text="Atlasium turns your code, infrastructure, workflows, and project history into living walkthroughs that evolve with every update. We help engineers onboard faster, keep context alive, and make documentation intelligent and always up to date."
           duration={0.8}
         />
       </motion.div>

@@ -8,6 +8,9 @@ import Logos from "@/components/logos";
 import Particles from "@/components/ui/particles";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import About from "@/components/about";
+import Product from "@/components/product";
+import Team from "@/components/team";
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -140,10 +143,29 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-12 md:pt-24">
+      {/* Hero Section */}
       <section className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
-        {/* <Header /> */}
-
         <CTA />
+      </section>
+
+      {/* About Section */}
+      <About />
+
+      {/* Product Section */}
+      <Product />
+
+      {/* Team Section */}
+      <Team />
+
+      {/* Application Form Section */}
+      <section id="form" className="flex w-full flex-col items-center px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 text-center">
+          <h2 className="mb-4 text-4xl font-bold text-[#D4AF37]">Apply to the Founding 50</h2>
+          <div className="mx-auto h-1 w-24 bg-[#D4AF37]/50"></div>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-[#F8F9FA]">
+            Join 50 forward-thinking engineering teams shaping the future of knowledge management
+          </p>
+        </div>
 
         <Form
           name={name}
@@ -173,11 +195,9 @@ export default function Home() {
             Book a 15-minute discovery call
           </a>
         </div>
-
-        {/* <Logos /> */}
       </section>
 
-      {/* <Footer /> */}
+      <Footer />
 
       <Particles
         quantityDesktop={350}
