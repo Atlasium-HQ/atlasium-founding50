@@ -87,8 +87,8 @@ export default function Product() {
             <div>
               <h3 className="mb-2 text-2xl font-bold text-[#D4AF37]">Founding 50 Program</h3>
               <p className="mb-3 text-base leading-relaxed text-[#F8F9FA]">
-                We're building Atlasium with <strong>50 select engineering teams</strong> who will help shape the product
-                from the ground up. We're currently in active development, working toward our first beta release with
+                We&apos;re building Atlasium with <strong>50 select engineering teams</strong> who will help shape the product
+                from the ground up. We&apos;re currently in active development, working toward our first beta release with
                 voice-narrated walkthroughs, code and infrastructure analysis, repository integrations, and automatic syncing.
               </p>
               <p className="text-sm text-[#F8F9FA]/80">
@@ -339,7 +339,7 @@ export default function Product() {
                   {/* Narration text */}
                   <div className="mb-4 rounded-md bg-[#1B263B]/60 p-3">
                     <p className="text-xs leading-relaxed text-[#F8F9FA]/90">
-                      "This middleware validates JWT tokens on every protected API request. Notice how we extract the userId from the decoded payload..."
+                      &ldquo;This middleware validates JWT tokens on every protected API request. Notice how we extract the userId from the decoded payload...&rdquo;
                     </p>
                   </div>
                   {/* Player controls */}
@@ -600,7 +600,7 @@ export default function Product() {
           <h3 className="mb-3 text-2xl font-bold text-[#D4AF37]">Join the Founding 50</h3>
           <p className="mx-auto mb-6 max-w-2xl text-base text-[#F8F9FA]">
             Get early access to Atlasium, help shape the product roadmap, and secure lifetime early-adopter pricing.
-            We're looking for 50 forward-thinking engineering teams to partner with during our beta phase.
+            We&apos;re looking for 50 forward-thinking engineering teams to partner with during our beta phase.
           </p>
           <a
             href="#form"

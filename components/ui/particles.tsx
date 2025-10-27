@@ -78,6 +78,7 @@ const Particles: React.FC<ParticlesProps> = ({
   const initCanvas = useCallback(() => {
     resizeCanvas();
     drawParticles();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quantity, color]);
 
   useEffect(() => {
@@ -109,10 +110,12 @@ const Particles: React.FC<ParticlesProps> = ({
     return () => {
       window.removeEventListener("resize", initCanvas);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [color, initCanvas]);
 
   useEffect(() => {
     onMouseMove();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mousePosition.x, mousePosition.y]);
 
   useEffect(() => {

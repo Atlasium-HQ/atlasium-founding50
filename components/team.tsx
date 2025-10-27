@@ -131,7 +131,7 @@ export default function Team() {
         <h3 className="mb-3 text-xl font-semibold text-[#D4AF37]">Why This Team?</h3>
         <p className="text-base leading-relaxed text-[#F8F9FA]">
           Our founding team brings together deep expertise in software engineering, AI/ML, and developer tools.
-          We've experienced firsthand the pain of knowledge drain and long onboarding cycles in complex codebases.
+          We&apos;ve experienced firsthand the pain of knowledge drain and long onboarding cycles in complex codebases.
           This personal experience drives our mission to build a better solution for engineering teams worldwide.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">

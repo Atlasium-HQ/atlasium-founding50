@@ -77,7 +77,7 @@ export default function About() {
           <p className="text-base leading-relaxed text-[#F8F9FA]/90">
             Engineering leaders (CTOs, VPs of Engineering) typically bring us in to solve developer productivity
             and onboarding challenges. We also partner with People/HR teams focused on improving the engineering
-            onboarding experience. Whether you're a 20-person startup or a 500-engineer organization, Atlasium
+            onboarding experience. Whether you&apos;re a 20-person startup or a 500-engineer organization, Atlasium
             adapts to your needs.
           </p>
         </div>
@@ -85,9 +85,9 @@ export default function About() {
         <div className="rounded-lg border border-[#D4AF37]/20 bg-[#1B263B]/50 p-6">
           <h3 className="mb-3 text-2xl font-semibold text-[#D4AF37]">Why We Built Atlasium</h3>
           <p className="text-lg leading-relaxed">
-            We've experienced firsthand the frustration of joining a complex codebase and not knowing where to start,
+            We&apos;ve experienced firsthand the frustration of joining a complex codebase and not knowing where to start,
             or watching critical knowledge walk out the door when senior engineers leave. Traditional documentation
-            tools fail because they're static, reactive, and focus only on code, ignoring the infrastructure and workflows
+            tools fail because they&apos;re static, reactive, and focus only on code, ignoring the infrastructure and workflows
             that make everything work.
           </p>
           <p className="mt-3 text-lg leading-relaxed">
