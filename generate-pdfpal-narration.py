@@ -8,8 +8,8 @@ import requests
 from pathlib import Path
 
 ELEVENLABS_API_KEY = "sk_1bf06fa4ab77eb74668e0fbdf6945bd9bd4624231e230817"
-VOICE_ID = "XrExE9yKIg1WjnnlVkGX"  # Matilda - Professional, informative_educational, natural
-MODEL_ID = "eleven_multilingual_v2"
+VOICE_ID = "pFZP5JQG7iQjIQuC4Bku"  # Lily - Velvety British, warmth & clarity, designed for narration
+MODEL_ID = "eleven_multilingual_v2"  # Best for stability and natural pauses
 
 # Create output directory
 Path("public/narration").mkdir(parents=True, exist_ok=True)
@@ -77,10 +77,10 @@ def generate_narration(text, walkthrough_type, step_id):
         "text": text,
         "model_id": MODEL_ID,
         "voice_settings": {
-            "stability": 0.71,  # Higher = more natural and expressive
-            "similarity_boost": 0.75,
-            "style": 0.5,  # Added style for more human-like delivery
-            "use_speaker_boost": True
+            "stability": 0.40,  # 35-40% for long-form narration (avoids monotone)
+            "similarity_boost": 0.75,  # Sweet spot - higher can add artifacts
+            "style": 0.35,  # Lower stability + style adds natural emotional fluctuation
+            "use_speaker_boost": True  # Clearer, more powerful delivery
         }
     }
 

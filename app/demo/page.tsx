@@ -615,6 +615,7 @@ export default function LiveDemoPDFPalPage() {
   const [highlightedLine, setHighlightedLine] = useState<number | null>(null);
   const [audioPlaying, setAudioPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const hasStartedStepRef = useRef<boolean>(false);
 
   const walkthrough = selectedWalkthrough === "chat-streaming"
     ? WALKTHROUGHS.chatWithStreaming
@@ -638,6 +639,7 @@ export default function LiveDemoPDFPalPage() {
       // Auto-advance to next step after audio finishes (only if playing)
       if (isPlaying) {
         setTimeout(() => {
+          hasStartedStepRef.current = false; // Reset for next step
           if (currentStep < walkthrough.steps.length - 1) {
             setCurrentStep(currentStep + 1);
           } else {
@@ -659,15 +661,19 @@ export default function LiveDemoPDFPalPage() {
   useEffect(() => {
     if (!isPlaying) return;
 
-    setShowCode(false);
-    const codeDelay = setTimeout(() => {
-      setShowCode(true);
-      playNarration(currentStep);
-    }, 800);
+    // Only start playback if we haven't started this step yet
+    if (!hasStartedStepRef.current) {
+      setShowCode(false);
+      const codeDelay = setTimeout(() => {
+        setShowCode(true);
+        playNarration(currentStep);
+        hasStartedStepRef.current = true;
+      }, 800);
 
-    return () => {
-      clearTimeout(codeDelay);
-    };
+      return () => {
+        clearTimeout(codeDelay);
+      };
+    }
   }, [currentStep, isPlaying, selectedWalkthrough, playNarration]);
 
   // Code line highlighting animation
@@ -699,17 +705,23 @@ export default function LiveDemoPDFPalPage() {
       if (currentStep === walkthrough.steps.length - 1) {
         setCurrentStep(0);
         setShowCode(false);
-      } else if (!showCode) {
-        // If code isn't showing yet, show it and start narration
+        hasStartedStepRef.current = false;
+      } else if (!hasStartedStepRef.current) {
+        // If we haven't started this step yet, start it
         setShowCode(false);
         setTimeout(() => {
           setShowCode(true);
           playNarration(currentStep);
+          hasStartedStepRef.current = true;
         }, 800);
+      } else if (audioRef.current && audioRef.current.paused) {
+        // Resume paused audio (audio element exists and is paused)
+        audioRef.current.play().catch(err => console.error("Resume error:", err));
+        setAudioPlaying(true);
       }
     } else {
-      // Pause the audio when pausing
-      if (audioRef.current) {
+      // Pause the audio when pausing (don't stop it)
+      if (audioRef.current && !audioRef.current.paused) {
         audioRef.current.pause();
         setAudioPlaying(false);
       }
@@ -720,9 +732,11 @@ export default function LiveDemoPDFPalPage() {
     setCurrentStep(index);
     setIsPlaying(false);
     setShowCode(false);
+    hasStartedStepRef.current = false; // Reset for new step
     setTimeout(() => {
       setShowCode(true);
       playNarration(index);
+      hasStartedStepRef.current = true;
     }, 100);
   };
 
@@ -731,6 +745,7 @@ export default function LiveDemoPDFPalPage() {
     setCurrentStep(0);
     setIsPlaying(false);
     setShowCode(false);
+    hasStartedStepRef.current = false; // Reset for new walkthrough
   };
 
   // Cleanup audio on unmount
