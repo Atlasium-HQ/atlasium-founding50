@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaSlack } from "react-icons/fa";
 import { SiJira } from "react-icons/si";
@@ -14,14 +14,14 @@ const WALKTHROUGHS = {
     description: "How we implemented streaming AI responses with optimistic updates",
     estimatedTime: "8 min read",
     complexity: "Advanced",
-    backgroundStory: "After our user testing session in week 3, Sarah (Head of Product) noticed users were confused by the static 'loading' state. She said: 'People are used to ChatGPT showing words appear in real-time. Can we do that?' This kicked off a 2-day sprint where we rebuilt the entire message flow.",
+    backgroundStory: "After our user testing session in week 3, Sarah (Head of Product) noticed users were confused by the static 'loading' state. She said: &quot;People are used to ChatGPT showing words appear in real-time. Can we do that?&quot; This kicked off a 2-day sprint where we rebuilt the entire message flow.",
     teamContext: {
       jiraTicket: "PDFP-127",
       jiraStatus: "Done",
       slackThread: "#engineering - Sept 15, 2024",
       keyDecision: "We chose OpenAI's streaming API over batch completion to improve perceived performance by 10x",
       stakeholders: ["Sarah Chen (Product)", "Marcus Reid (Backend Lead)", "You (New Engineer)"],
-      meeting: "Sprint Planning - Sept 12, 2024: 'Let's make this feel magical'"
+      meeting: "Sprint Planning - Sept 12, 2024: &apos;Let&apos;s make this feel magical&apos;"
     },
     steps: [
       {
@@ -623,7 +623,7 @@ export default function LiveDemoPDFPalPage() {
   const currentStepData = walkthrough.steps[currentStep];
 
   // Play narration for current step
-  const playNarration = (stepIndex: number) => {
+  const playNarration = useCallback((stepIndex: number) => {
     if (audioRef.current) {
       audioRef.current.pause();
     }
@@ -653,7 +653,7 @@ export default function LiveDemoPDFPalPage() {
     };
 
     audio.play().catch(err => console.error("Audio play error:", err));
-  };
+  }, [selectedWalkthrough, isPlaying, currentStep, walkthrough.steps.length]);
 
   // Auto-advance simulation with narration
   useEffect(() => {
@@ -668,7 +668,7 @@ export default function LiveDemoPDFPalPage() {
     return () => {
       clearTimeout(codeDelay);
     };
-  }, [currentStep, isPlaying, selectedWalkthrough]);
+  }, [currentStep, isPlaying, selectedWalkthrough, playNarration]);
 
   // Code line highlighting animation
   useEffect(() => {
@@ -687,12 +687,32 @@ export default function LiveDemoPDFPalPage() {
     }, 400);
 
     return () => clearInterval(interval);
-  }, [showCode, currentStep, isPlaying]);
+  }, [showCode, currentStep, isPlaying, currentStepData.realCode]);
 
   const handlePlayPause = () => {
-    setIsPlaying(!isPlaying);
-    if (!isPlaying && currentStep === walkthrough.steps.length - 1) {
-      setCurrentStep(0);
+    const newPlayingState = !isPlaying;
+    setIsPlaying(newPlayingState);
+
+    // If starting to play
+    if (newPlayingState) {
+      // Reset to beginning if at the end
+      if (currentStep === walkthrough.steps.length - 1) {
+        setCurrentStep(0);
+        setShowCode(false);
+      } else if (!showCode) {
+        // If code isn't showing yet, show it and start narration
+        setShowCode(false);
+        setTimeout(() => {
+          setShowCode(true);
+          playNarration(currentStep);
+        }, 800);
+      }
+    } else {
+      // Pause the audio when pausing
+      if (audioRef.current) {
+        audioRef.current.pause();
+        setAudioPlaying(false);
+      }
     }
   };
 
@@ -962,13 +982,13 @@ export default function LiveDemoPDFPalPage() {
                     <Code size={12} className="text-[#D4AF37]" />
                     <span className="text-gray-400">{currentStepData.file}</span>
                   </div>
-                  {currentStepData.jiraTicket && (
+                  {'jiraTicket' in currentStepData && currentStepData.jiraTicket && (
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0D1B2A]/50">
                       <SiJira size={12} className="text-blue-400" />
                       <span className="text-gray-400">{currentStepData.jiraTicket}</span>
                     </div>
                   )}
-                  {currentStepData.gitCommit && (
+                  {'gitCommit' in currentStepData && currentStepData.gitCommit && (
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0D1B2A]/50">
                       <GitBranch size={12} className="text-[#D4AF37]" />
                       <span className="text-gray-400">{currentStepData.gitCommit}</span>
@@ -977,7 +997,7 @@ export default function LiveDemoPDFPalPage() {
                 </div>
 
                 {/* Slack Quote */}
-                {currentStepData.slackQuote && (
+                {'slackQuote' in currentStepData && currentStepData.slackQuote && (
                   <div className="p-4 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-l-4 border-purple-500">
                     <div className="flex items-start gap-3">
                       <FaSlack className="text-purple-400 mt-1" size={16} />
@@ -991,7 +1011,7 @@ export default function LiveDemoPDFPalPage() {
                           </span>
                         </div>
                         <p className="text-sm text-gray-300 italic leading-relaxed">
-                          "{currentStepData.slackQuote.text}"
+                          &quot;{currentStepData.slackQuote.text}&quot;
                         </p>
                       </div>
                     </div>
@@ -1067,7 +1087,7 @@ export default function LiveDemoPDFPalPage() {
                   <div className="bg-[#1B263B] rounded-xl p-6 border border-[#D4AF37]/10">
                     <h4 className="text-sm font-semibold text-[#D4AF37] mb-3 flex items-center gap-2">
                       <Code size={16} />
-                      What's happening here?
+                      What&apos;s happening here?
                     </h4>
                     <p className="text-gray-300 leading-relaxed">
                       {currentStepData.explanation}
@@ -1075,7 +1095,7 @@ export default function LiveDemoPDFPalPage() {
                   </div>
 
                   {/* Why This Way */}
-                  {currentStepData.whyThisWay && (
+                  {'whyThisWay' in currentStepData && currentStepData.whyThisWay && (
                     <div className="bg-[#1B263B] rounded-xl p-6 border border-[#D4AF37]/10">
                       <h4 className="text-sm font-semibold text-yellow-400 mb-3 flex items-center gap-2">
                         <Lightbulb size={16} />
@@ -1088,7 +1108,7 @@ export default function LiveDemoPDFPalPage() {
                   )}
 
                   {/* Slack Thread */}
-                  {currentStepData.slackThread && (
+                  {'slackThread' in currentStepData && currentStepData.slackThread && (
                     <div className="bg-[#1B263B] rounded-xl p-6 border border-purple-500/20">
                       <div className="flex items-start gap-3">
                         <MessageSquare size={16} className="text-purple-400 mt-0.5 flex-shrink-0" />
@@ -1117,7 +1137,7 @@ export default function LiveDemoPDFPalPage() {
                   )}
 
                   {/* Performance Note */}
-                  {currentStepData.performanceNote && (
+                  {'performanceNote' in currentStepData && currentStepData.performanceNote && (
                     <div className="flex items-start gap-3 p-4 rounded-lg bg-blue-500/10 border border-blue-500/20">
                       <Zap size={16} className="text-blue-400 mt-0.5 flex-shrink-0" />
                       <div>
@@ -1128,7 +1148,7 @@ export default function LiveDemoPDFPalPage() {
                   )}
 
                   {/* Technical Debt */}
-                  {currentStepData.technicalDebt && (
+                  {'technicalDebt' in currentStepData && currentStepData.technicalDebt && (
                     <div className="flex items-start gap-3 p-4 rounded-lg bg-orange-500/10 border border-orange-500/20">
                       <AlertTriangle size={16} className="text-orange-400 mt-0.5 flex-shrink-0" />
                       <div>
@@ -1139,7 +1159,7 @@ export default function LiveDemoPDFPalPage() {
                   )}
 
                   {/* End Result */}
-                  {currentStepData.endResult && (
+                  {'endResult' in currentStepData && currentStepData.endResult && (
                     <div className="flex items-start gap-3 p-4 rounded-lg bg-green-500/10 border border-green-500/20">
                       <CheckCircle2 size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
                       <div>
@@ -1150,7 +1170,7 @@ export default function LiveDemoPDFPalPage() {
                   )}
 
                   {/* Linked Files */}
-                  {currentStepData.linkedFiles && currentStepData.linkedFiles.length > 0 && (
+                  {'linkedFiles' in currentStepData && currentStepData.linkedFiles && currentStepData.linkedFiles.length > 0 && (
                     <div className="bg-[#1B263B] rounded-xl p-6 border border-[#D4AF37]/10">
                       <div className="text-xs font-semibold text-gray-500 mb-3">Related Files</div>
                       <div className="flex flex-wrap gap-2">
